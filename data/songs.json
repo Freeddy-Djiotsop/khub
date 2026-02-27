@@ -1,0 +1,28 @@
+{
+  "songs": [
+    {
+      "title": "Amazing Grace",
+      "artist": "John Newton",
+      "folder": "amazing-grace",
+      "tags": ["worship", "classic"]
+    },
+    {
+      "title": "I'll do your will",
+      "artist": "The Real Gospel Studio",
+      "folder": "do-your-will",
+      "tags": ["worship"]
+    },
+    {
+      "title": "Il est le chemin",
+      "artist": "Ztf Music",
+      "folder": "il-est-le-chemin",
+      "tags": ["worship"]
+    },
+    {
+      "title": "How Great Is Our God",
+      "artist": "Chris Tomlin",
+      "folder": "how-great-is-our-god",
+      "tags": ["worship"]
+    }
+  ]
+}
