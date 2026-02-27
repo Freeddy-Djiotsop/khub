@@ -1,0 +1,23 @@
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IntelliJ IDEA
+# =========================
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# =========================
+# VS Code
+# =========================
+.vscode/*
+
+# allow recommended settings if needed
+!.vscode/extensions.json
+!.vscode/settings.json

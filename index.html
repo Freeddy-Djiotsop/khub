@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Hub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Knowledge Hub</h1>
+</header>
+
+<nav class="tabs">
+    <button class="tab-button active" data-tab="overview">Overview</button>
+    <button class="tab-button" data-tab="links">Nützliche Links</button>
+    <button class="tab-button" data-tab="tutorials">Tutorials</button>
+    <button class="tab-button" data-tab="documents">Dokumente</button>
+    <button class="tab-button" data-tab="images">Bilder</button>
+    <button class="tab-button" data-tab="songs">Heralders</button>
+</nav>
+
+<main>
+
+    <section id="overview" class="tab-content active">
+
+
+        <h2>Überblick</h2>
+
+        <p>
+            <strong>KHub (Knowledge Hub)</strong> ist eine zentrale Plattform, die wichtige Ressourcen unseres Werks an
+            einem Ort sammelt und organisiert.
+            Das Ziel ist es, den Zugriff auf nützliche Informationen zu vereinfachen und zu vermeiden, dass Geschwister
+            lange in Chatverläufen nach Links, Dokumenten oder Bildern suchen müssen.
+        </p>
+
+        <p>
+            Die Plattform stellt verschiedene Kategorien bereit, damit Inhalte schnell gefunden werden können.
+            Dazu gehören nützliche Links, hilfreiche Tutorials, wichtige Dokumente sowie Bilder oder Diagramme, die für
+            uns relevant sind.
+        </p>
+
+        <p>
+            Durch eine einfache Navigation mit Tabs können Benutzer schnell zwischen den verschiedenen Bereichen
+            wechseln und die benötigten Ressourcen ohne Aufwand finden.
+        </p>
+
+        <p>
+            <strong>KHub</strong> dient somit als gemeinsame Wissenssammlung, die das Teilen von Informationen
+            erleichtert und
+            sicherstellt, dass wichtige Ressourcen für alle Mitglieder jederzeit zugänglich bleiben.
+        </p>
+
+    </section>
+    <section id="links" class="tab-content">
+
+        <h2>Nützliche Links</h2>
+
+        <ul>
+            <li><a href="https://bit.ly/Neukirchen" target="_blank">Besuche in Neukirchen</a></li>
+            <li><a href="https://www.youth-challenge.org/destiny-camp/dc-8" target="_blank">DCA  Anmeldung</a></li>
+            <li><a href="https://airtable.com/app4zVmLzPtlsILp8/pagw635Be3aJI1YOG/form" target="_blank">Heralders
+                Rechenschaft ablegen</a></li>
+            <li><a href="https://www.youth-challenge.org/yc-uni/ztf-awards" target="_blank">ZTF Awards Anmeldung</a>
+            </li>
+            <li><a href="https://youth-challenge-awards.base44.app/" target="_blank">ZTF Awards Webseite</a></li>
+            <li><a href="https://us02web.zoom.us/j/84460707935?pwd=V3YyZy9idi8xVGhhdk4zK0c4Sk5iQT09" target="_blank">Zoom
+                - GEBETSNACHT</a></li>
+            <li><a href="https://us02web.zoom.us/j/84460707935?pwd=V3YyZy9idi8xVGhhdk4zK0c4Sk5iQT09" target="_blank">Zoom
+                - Gebet für die Vision</a></li>
+            <li><a href="https://w-hs.zoom-x.de/j/67163484433?pwd=K0hsdTQ3UVc3dXA3bExwdE9lYURadz09" target="_blank">Zoom
+                - Gebet für den Pastor</a></li>
+            <li><a href="https://uni-koeln.zoom.us/j/7891279619" target="_blank">Zoom - Gebet NRW</a></li>
+            <li><a href="https://w-hs.zoom.us/j/2847908012" target="_blank">Zoom - The Readers</a></li>
+        </ul>
+
+    </section>
+
+    <section id="tutorials" class="tab-content">
+        <h2>Tutorials</h2>
+
+        <div class="video-list">
+            <div class="video-list" id="video-list"></div>
+        </div>
+
+        <div id="video-player-container"></div>
+
+    </section>
+
+    <section id="documents" class="tab-content">
+
+        <h2>Dokumente</h2>
+        <div class="document-list" id="document-list">
+
+        </div>
+        <!--        <a href="documents/PROGRAMME%202026%20CMGI%20DEUTSCHLAND_20260217_001214_0000.pdf" target="_blank">-->
+        <!--           Name-->
+        <!--        </a>-->
+
+    </section>
+
+    <section id="images" class="tab-content">
+
+        <h2>Bilder</h2>
+
+        <div id="image-list" class="image-gallery">
+
+            <!--            <img src="images/9a8bff1d-fe56-428f-9cbc-140d8c03ec40.jpg" alt="CMCI Logo">-->
+            <!--            <img src="images/57da1c71-80bd-45be-8b86-5687fb2ad3bd.jpg" alt="Studenten-GODI 22.02.2026">-->
+            <!--            <img src="images/498143f5-4a2c-4852-9bf7-782055a55e75.jpg" alt="ZMA Germany July 2026">-->
+
+        </div>
+
+    </section>
+
+    <section id="songs" class="tab-content">
+
+        <div class="songs-layout">
+
+            <!-- Liste des chants -->
+            <div class="songs-sidebar">
+
+                <input type="text" id="song-search" placeholder="Search song...">
+
+                <div id="song-list" class="song-list"></div>
+
+            </div>
+
+            <!-- Viewer -->
+            <div class="song-viewer">
+
+                <h2 id="song-title">Select a song</h2>
+
+                <div class="song-mode">
+                    <button class="mode-btn active" data-mode="lyrics">Lyrics</button>
+                    <button class="mode-btn" data-mode="alpha">Chords (A B C)</button>
+                    <button class="mode-btn" data-mode="number">Chords (1 4 5)</button>
+                </div>
+
+                <pre id="song-content"></pre>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<div id="video-modal" class="video-modal">
+
+    <div class="video-modal-content">
+
+        <span class="close-modal">&times;</span>
+
+        <iframe
+                id="video-frame"
+                width="800"
+                height="450"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+        </iframe>
+
+    </div>
+
+</div>
+
+
+<script src="js/script.js"></script>
+<script src="js/songs.js"></script>
+</body>
+</html>

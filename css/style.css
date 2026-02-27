@@ -1,0 +1,347 @@
+body {
+
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f6f8;
+
+}
+
+header {
+
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.tabs {
+
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+
+}
+
+.tab-button {
+
+  padding: 14px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+.tab-button:hover {
+
+  background-color: #f0f0f0;
+
+}
+
+.tab-button.active {
+
+  border-bottom: 3px solid #3498db;
+  font-weight: bold;
+
+}
+
+main {
+
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+
+}
+
+.tab-content {
+
+  display: none;
+
+}
+
+.tab-content.active {
+
+  display: block;
+
+}
+
+ul {
+
+  line-height: 1.8;
+
+}
+
+.image-gallery {
+
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+}
+
+.image-gallery img {
+
+  width: 250px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+}
+
+.video-list {
+
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+}
+
+.video-card {
+
+  cursor: pointer;
+  width: 320px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+
+}
+
+.video-card:hover {
+
+  transform: scale(1.04);
+
+}
+
+.thumbnail-container {
+
+  position: relative;
+
+}
+
+.thumbnail-container img {
+
+  width: 100%;
+  display: block;
+
+}
+
+.play-button {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.video-card h3 {
+
+  font-size: 16px;
+  padding: 12px;
+
+}
+
+.video-player {
+
+  margin-top: 40px;
+
+}
+
+.video-modal {
+
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.8);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+
+}
+
+.video-modal-content {
+
+  position: relative;
+  background: black;
+  padding: 10px;
+  border-radius: 8px;
+
+}
+
+.close-modal {
+
+  position: absolute;
+  top: -35px;
+  right: -10px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+
+}
+
+/* Document thumbnail or card */
+.document-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.document-card {
+  width: 200px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.document-card:hover {
+  transform: scale(1.03);
+}
+
+.doc-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+}
+
+.doc-icon {
+  font-size: 50px;
+}
+
+.doc-title {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*Song */
+.song-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.song-card {
+  padding: 15px;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.song-card:hover {
+  background: #f3f3f3;
+}
+
+.songs-layout{
+  display:flex;
+  height:600px;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid #ddd;
+}
+
+/* sidebar */
+
+.songs-sidebar{
+  width:320px;
+  border-right:1px solid #eee;
+  display:flex;
+  flex-direction:column;
+  background:#fafafa;
+}
+
+#song-search{
+  padding:10px;
+  border:none;
+  border-bottom:1px solid #eee;
+  outline:none;
+}
+
+/* list */
+
+.song-list{
+  overflow-y:auto;
+  flex:1;
+}
+
+.song-card{
+  padding:12px 16px;
+  cursor:pointer;
+  border-bottom:1px solid #eee;
+  transition:0.2s;
+}
+
+.song-card:hover{
+  background:#f2f2f2;
+}
+
+.song-card.active{
+  background:#e8f0ff;
+}
+
+/* viewer */
+
+.song-viewer{
+  flex:1;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+}
+
+.song-viewer h2{
+  margin-bottom:10px;
+}
+
+/* mode buttons */
+
+.song-mode{
+  margin-bottom:15px;
+}
+
+.mode-btn{
+  padding:6px 12px;
+  margin-right:6px;
+  border:none;
+  background:#eee;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.mode-btn.active{
+  background:#007bff;
+  color:white;
+}
+
+/* song text */
+
+#song-content{
+  background:#fafafa;
+  padding:15px;
+  border-radius:8px;
+  overflow:auto;
+  flex:1;
+  font-family:monospace;
+  white-space:pre;
+}
