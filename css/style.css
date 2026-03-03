@@ -345,3 +345,121 @@ ul {
   font-family:monospace;
   white-space:pre;
 }
+
+.songs-layout{
+  display:flex;
+  height:600px;
+  border:1px solid #eee;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+/*sidebar*/
+.songs-sidebar{
+  width:320px;
+  border-right:1px solid #eee;
+  display:flex;
+  flex-direction:column;
+  background:#fafafa;
+}
+
+/*Liste des chants*/
+.song-card{
+  padding:12px;
+  border-bottom:1px solid #eee;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.song-card:hover{
+  background:#f3f3f3;
+}
+
+.song-card.active{
+  background:#e8f0ff;
+}
+
+.song-row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.song-icon{
+  font-size:20px;
+}
+
+.song-viewer{
+  flex:1;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+}
+
+.song-actions{
+  margin:10px 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.mode-btn,
+.action-btn{
+
+  padding:6px 12px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  background:#eee;
+
+}
+
+.action-btn.active{
+  background:#007bff;
+  color:white;
+}
+
+.hidden{
+  display:none;
+}
+
+#song-content{
+  background:#fafafa;
+  padding:15px;
+  border-radius:8px;
+  overflow:auto;
+  flex:1;
+  white-space:pre;
+  font-family:monospace;
+}
+
+.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+}
+
+.tab-button{
+  flex:1;
+  min-width:120px;
+}
+
+@media (max-width:768px){
+
+  .songs-layout{
+    flex-direction:column;
+    height:auto;
+  }
+
+  .songs-sidebar{
+    width:100%;
+    max-height:250px;
+    border-right:none;
+    border-bottom:1px solid #eee;
+  }
+
+  .song-viewer{
+    padding:15px;
+  }
+
+}

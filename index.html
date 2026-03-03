@@ -17,11 +17,11 @@
 
 <nav class="tabs">
     <button class="tab-button active" data-tab="overview">Overview</button>
+    <button class="tab-button" data-tab="songs">Lieder</button>
     <button class="tab-button" data-tab="links">Nützliche Links</button>
     <button class="tab-button" data-tab="tutorials">Tutorials</button>
     <button class="tab-button" data-tab="documents">Dokumente</button>
     <button class="tab-button" data-tab="images">Bilder</button>
-    <button class="tab-button" data-tab="songs">Lieder</button>
 </nav>
 
 <main>
@@ -73,6 +73,46 @@
         </p>
 
     </section>
+
+    <section id="songs" class="tab-content">
+
+        <div class="songs-layout">
+
+            <div class="songs-sidebar">
+
+                <input type="text" id="song-search" placeholder="Song suchen...">
+
+                <div id="song-list" class="song-list"></div>
+
+            </div>
+
+            <div class="song-viewer">
+
+                <h2 id="song-title">Song auswählen</h2>
+
+                <div id="song-meta"></div>
+
+                <div class="song-actions">
+
+                    <button class="mode-btn active" data-mode="lyrics">Lyrics</button>
+                    <button class="mode-btn" data-mode="alpha">Chords ABC</button>
+                    <button class="mode-btn" data-mode="number">Chords 1-4-5</button>
+
+                    <button id="youtube-btn" class="action-btn hidden">▶ YouTube</button>
+                    <button id="audio-btn" class="action-btn hidden">🔊 Audio</button>
+
+                </div>
+
+                <div id="audio-container"></div>
+
+                <pre id="song-content"></pre>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <section id="links" class="tab-content">
 
         <h2>Nützliche Links</h2>
@@ -134,37 +174,37 @@
 
     </section>
 
-    <section id="songs" class="tab-content">
+<!--    <section id="songs" class="tab-content">-->
 
-        <div class="songs-layout">
+<!--        <div class="songs-layout">-->
 
-            <!-- Liste des chants -->
-            <div class="songs-sidebar">
+<!--            &lt;!&ndash; Liste des chants &ndash;&gt;-->
+<!--            <div class="songs-sidebar">-->
 
-                <input type="text" id="song-search" placeholder="Search song...">
+<!--                <input type="text" id="song-search" placeholder="Search song...">-->
 
-                <div id="song-list" class="song-list"></div>
+<!--                <div id="song-list" class="song-list"></div>-->
 
-            </div>
+<!--            </div>-->
 
-            <!-- Viewer -->
-            <div class="song-viewer">
+<!--            &lt;!&ndash; Viewer &ndash;&gt;-->
+<!--            <div class="song-viewer">-->
 
-                <h2 id="song-title">Select a song</h2>
+<!--                <h2 id="song-title">Select a song</h2>-->
 
-                <div class="song-mode">
-                    <button class="mode-btn active" data-mode="lyrics">Lyrics</button>
-                    <button class="mode-btn" data-mode="alpha">Chords (A B C)</button>
-                    <button class="mode-btn" data-mode="number">Chords (1 4 5)</button>
-                </div>
+<!--                <div class="song-mode">-->
+<!--                    <button class="mode-btn active" data-mode="lyrics">Lyrics</button>-->
+<!--                    <button class="mode-btn" data-mode="alpha">Chords (A B C)</button>-->
+<!--                    <button class="mode-btn" data-mode="number">Chords (1 4 5)</button>-->
+<!--                </div>-->
 
-                <pre id="song-content"></pre>
+<!--                <pre id="song-content"></pre>-->
 
-            </div>
+<!--            </div>-->
 
-        </div>
+<!--        </div>-->
 
-    </section>
+<!--    </section>-->
 
 </main>
 
@@ -190,6 +230,7 @@
 
 
 <script src="js/script.js"></script>
+<script src="js/youtube.js"></script>
 <script src="js/songs.js"></script>
 </body>
 </html>

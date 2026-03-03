@@ -1,27 +1,93 @@
 {
   "songs": [
     {
-      "title": "Amazing Grace",
-      "artist": "John Newton",
-      "folder": "amazing-grace",
-      "tags": ["worship", "classic"]
+      "folder": "attire-moi-a-toi",
+      "title": "Attire-moi à toi",
+      "artist": "Ztf Music",
+      "type": "community",
+      "youtube": "",
+      "audio": "audios/Attire-moi a toi.mp4",
+      "tags": ["worship"]
     },
     {
+      "folder": "du-bist-so-true",
+      "title": "Du bist so true",
+      "artist": "Heralders",
+      "type": "heralders",
+      "youtube": "",
+      "audio": "audios/du bist so true.mp3",
+      "tags": ["worship"]
+    },
+    {
+      "folder": "house-of-the-lord",
+      "title": "House of the lord",
+      "artist": "Heralders",
+      "type": "heralders",
+      "youtube": "",
+      "audio": "audios/House of the Lord.mp4",
+      "tags": ["worship"]
+    },
+    {
+      "folder": "do-your-will",
       "title": "I'll do your will",
       "artist": "The Real Gospel Studio",
-      "folder": "do-your-will",
+      "type": "community",
+      "youtube": "https://www.youtube.com/watch?v=H7HU65oJYt4",
+      "audio": "",
       "tags": ["worship"]
     },
     {
+      "folder": "il-est-le-chemin",
       "title": "Il est le chemin",
       "artist": "Ztf Music",
-      "folder": "il-est-le-chemin",
+      "type": "community",
+      "youtube": "https://www.youtube.com/watch?v=WOHwBMrXQ4M",
+      "audio": "",
       "tags": ["worship"]
     },
     {
-      "title": "How Great Is Our God",
-      "artist": "Chris Tomlin",
-      "folder": "how-great-is-our-god",
+      "folder": "cest-si-bon-de-louer-ton-nom",
+      "title": "C'est si bon de louer son nom",
+      "artist": "Maggie Blanchard",
+      "type": "international",
+      "youtube": "https://www.youtube.com/watch?v=UV1dtmxUCYY",
+      "audio": "",
+      "tags": ["worship"]
+    },
+    {
+      "folder": "with-all-your-heart",
+      "title": "With all your heart",
+      "artist": "Heralders",
+      "type": "heralders",
+      "youtube": "",
+      "audio": "",
+      "tags": ["worship"]
+    },
+    {
+      "folder": "komm-unter-uns",
+      "title": "Komm unter uns",
+      "artist": "Heralders",
+      "type": "heralders",
+      "youtube": "",
+      "audio": "",
+      "tags": ["worship"]
+    },
+    {
+      "folder": "es-ist-das-jahr",
+      "title": "Das Jahr des Jubiläums",
+      "artist": "Heralders",
+      "type": "heralders",
+      "youtube": "https://www.youtube.com/watch?v=JzVbrKS-NPA",
+      "audio": "",
+      "tags": ["worship"]
+    },
+    {
+      "folder": "venez-venez-voir",
+      "title": "Venez venez voir",
+      "artist": "Gracielle Menye",
+      "type": "community",
+      "youtube": "",
+      "audio": "",
       "tags": ["worship"]
     }
   ]

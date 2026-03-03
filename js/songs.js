@@ -1,5 +1,7 @@
 let currentSong = null;
 let currentMode = "lyrics";
+let modeBtnList = document.querySelectorAll(".mode-btn");
+
 
 function initSongs() {
 
@@ -11,26 +13,68 @@ function initSongs() {
 
 function renderSongList(songs) {
 
-    const list = document.getElementById("song-list");
+    const list = document.getElementById("song-list")
+    list.innerHTML = ""
 
-    songs.forEach(song => {
+    songs.sort((a,b)=>a.title.localeCompare(b.title))
+        .forEach(song => {
 
-        const card = document.createElement("div");
+        const card = document.createElement("div")
 
-        card.classList.add("song-card");
+        card.className = "song-card"
 
         card.innerHTML = `
-            <h3>${song.title}</h3>
-            <p>${song.artist}</p>
-        `;
+            <div class="song-row">
+            <span class="song-icon">${getSongIcon(song.type)}</span>
+                <div>
+                    <strong>${song.title}</strong>
+                    <br>
+                    <small>${song.artist}</small>
+                </div>
+            </div>
+            `;
 
-        card.addEventListener("click", () => openSong(song));
+        card.addEventListener("click", () => openSong(song, card))
 
-        list.appendChild(card);
+        list.appendChild(card)
 
-    });
+    })
 
 }
+
+function getSongIcon(type) {
+
+    if (type === "heralders") return "🎼"
+    if (type === "community") return "🎤"
+    if (type === "international") return "🌍"
+
+    return "🎵"
+
+}
+
+//
+// function renderSongList(songs) {
+//
+//     const list = document.getElementById("song-list");
+//
+//     songs.forEach(song => {
+//
+//         const card = document.createElement("div");
+//
+//         card.classList.add("song-card");
+//
+//         card.innerHTML = `
+//             <h3>${song.title}</h3>
+//             <p>${song.artist}</p>
+//         `;
+//
+//         card.addEventListener("click", () => openSong(song));
+//
+//         list.appendChild(card);
+//
+//     });
+//
+// }
 
 // function openSong(song) {
 //
@@ -40,18 +84,35 @@ function renderSongList(songs) {
 //
 // }
 
-function openSong(song){
+function openSong(song, card) {
 
-    currentSong = song;
+    currentSong = song
 
-    document.getElementById("song-title").innerText = song.title;
+    document.getElementById("song-title").innerText = song.title
 
-    loadSongFile(song.folder, currentMode);
+    document.querySelectorAll(".song-card")
+        .forEach(c => c.classList.remove("active"))
 
-    document.querySelectorAll(".song-card").forEach(c=>c.classList.remove("active"));
-    event.currentTarget.classList.add("active");
+    card.classList.add("active")
+
+    loadSongFile(song.folder, currentMode)
+
+    setupMedia(song)
 
 }
+
+// function openSong(song){
+//
+//     currentSong = song;
+//
+//     document.getElementById("song-title").innerText = song.title;
+//
+//     loadSongFile(song.folder, currentMode);
+//
+//     document.querySelectorAll(".song-card").forEach(c=>c.classList.remove("active"));
+//     event.currentTarget.classList.add("active");
+//
+// }
 
 function loadSongFile(folder, mode) {
 
@@ -70,22 +131,74 @@ function loadSongFile(folder, mode) {
 
 }
 
-document.querySelectorAll(".mode-btn").forEach(btn=>{
+function setupMedia(song) {
 
-    btn.addEventListener("click",()=>{
+    const youtubeBtn = document.getElementById("youtube-btn")
+    const audioBtn = document.getElementById("audio-btn")
+    const audioContainer = document.getElementById("audio-container")
 
-        document.querySelectorAll(".mode-btn").forEach(b=>b.classList.remove("active"));
+    youtubeBtn.classList.remove("active")
+    audioBtn.classList.remove("active")
+    youtubeBtn.classList.add("hidden")
+    audioBtn.classList.add("hidden")
+    audioContainer.innerHTML = ""
+
+    if (song.youtube) {
+
+        youtubeBtn.classList.remove("hidden")
+
+        youtubeBtn.onclick = () => {
+            removeActive();
+            youtubeBtn.classList.add("active")
+
+            // window.open(song.youtube,"_blank")
+            document.getElementById("song-content").innerHTML = `
+                <div class="video-list">
+                    <div class="video-list" id="video-list"></div>
+                </div>
+                <div id="video-player-container"></div>
+            `;
+            renderVideo(song.youtube)
+        }
+
+    }
+
+    if (song.audio) {
+
+        audioBtn.classList.remove("hidden")
+
+        audioBtn.onclick = () => {
+            audioBtn.classList.add("active")
+
+            audioContainer.innerHTML =
+                `<audio controls src="${song.audio}" style="width:100%"></audio>`
+        }
+
+    }
+
+
+}
+
+modeBtnList.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        removeActive();
         btn.classList.add("active");
 
         currentMode = btn.dataset.mode;
 
-        if(currentSong){
-            loadSongFile(currentSong.folder,currentMode);
+        if (currentSong) {
+            loadSongFile(currentSong.folder, currentMode);
         }
 
     });
 
 });
+
+function removeActive() {
+    modeBtnList.forEach(b => b.classList.remove("active"));
+}
 
 document
     .getElementById("song-search")
